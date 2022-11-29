@@ -11,7 +11,7 @@ import com.example.menedzerlist.databinding.FragmentFirstBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class CategoryFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
 
