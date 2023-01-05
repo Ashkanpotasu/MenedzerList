@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MenedzerList</string>
+    <string name="nazwa_produktu">Nazwa produktu</string>
+    <string name="cena">Cena</string>
+    <string name="ilosc">Ilość</string>
+    <string name="dodaj">Dodaj</string>
 </resources>
