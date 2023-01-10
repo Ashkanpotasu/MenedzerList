@@ -1,9 +1,6 @@
 package com.example.menedzerlist
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.menedzerlist.data.Item
 import com.example.menedzerlist.data.ItemDao
 import kotlinx.coroutines.Dispatchers
@@ -31,5 +28,14 @@ class ShoppingViewModel(private val itemDao: ItemDao) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             itemDao.delete(item)
         }
+    }
+}
+class ShoppingViewModelFactory(private val itemDao: ItemDao) : ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(ShoppingViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return ShoppingViewModel(itemDao) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
