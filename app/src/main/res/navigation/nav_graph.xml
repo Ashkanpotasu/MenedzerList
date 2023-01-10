@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph.xml">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/shoppingListFragment">
 
+    <fragment
+        android:id="@+id/shoppingListFragment"
+        android:name="com.example.menedzerlist.ShoppingListFragment"
+        android:label="fragment_list_item"
+        tools:layout="@layout/fragment_list_item" >
+        <action
+            android:id="@+id/action_shoppingListFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.example.menedzerlist.AddItemFragment"
+        android:label="AddItemFragment" >
+        <action
+            android:id="@+id/action_addItemFragment_to_shoppingListFragment"
+            app:destination="@id/shoppingListFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
