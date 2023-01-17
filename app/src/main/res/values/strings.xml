@@ -4,4 +4,9 @@
     <string name="cena">Cena</string>
     <string name="ilosc">Ilość</string>
     <string name="dodaj">Dodaj</string>
+    <string name="produkt">Produkt</string>
+    <string name="dodaj_nowy_przedmiot">Dodaj nowy przedmiot</string>
+    <string name="usun">Usuń</string>
+    <string name="sprzedaj">Sprzedaj</string>
+    <string name="edytuj">Edytuj</string>
 </resources>
