@@ -67,7 +67,7 @@ class ShoppingDetailFragment : Fragment() {
     }
 
     private fun editItem() {
-        val action = ShoppingListFragmentDirections.actionShoppingListFragmentToAddItemFragment(
+        val action = ShoppingListFragmentDirections.actionShoppingListFragmentToAddItemFragment( //TODO to nie działa
             "Edytuj",
             item.id
         )
