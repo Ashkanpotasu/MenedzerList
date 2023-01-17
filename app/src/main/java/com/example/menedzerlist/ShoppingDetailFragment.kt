@@ -54,8 +54,8 @@ class ShoppingDetailFragment : Fragment() {
     private fun bind(item: Item) {
         binding.apply {
             binding.itemName.text = item.itemName
-            binding.itemPrice.text = item.getFormattedPrice()
             binding.itemCount.text = item.itemQuantity.toString()
+            binding.itemPrice.text = item.getFormattedPrice()
 
             sellItem.isEnabled = viewModel.isAvailableQuantity(item)
             sellItem.setOnClickListener { viewModel.sellItem(item) }
