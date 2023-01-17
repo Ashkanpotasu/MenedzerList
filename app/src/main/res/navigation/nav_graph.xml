@@ -37,7 +37,7 @@
             android:name="title"
             app:argType="string" />
         <argument
-            android:name="id"
+            android:name="item_id"
             android:defaultValue="-1"
             app:argType="integer" />
         <action
