@@ -6,13 +6,13 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ItemDao {
     @Update
-    suspend fun update(shoppingItem: Item)
+    suspend fun update(item: Item)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(shoppingItem: Item)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(item: Item)
 
     @Delete
-    suspend fun delete(shoppingItem: Item)
+    suspend fun delete(item: Item)
 
     @Query("select * from shopping_table")
     fun getItems(): Flow<List<Item>>
