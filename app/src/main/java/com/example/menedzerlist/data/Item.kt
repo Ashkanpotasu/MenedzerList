@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.text.NumberFormat
+import java.util.*
 
 @Entity(tableName = "shopping_table")
 data class Item(
@@ -20,4 +21,4 @@ data class Item(
     val itemPrice: Double
 )
 
-fun Item.getFormattedPrice(): String = NumberFormat.getCurrencyInstance().format(itemPrice)
+fun Item.getFormattedPrice(): String = NumberFormat.getCurrencyInstance(Locale("pl", "PL")).format(itemPrice)
