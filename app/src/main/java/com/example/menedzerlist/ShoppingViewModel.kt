@@ -16,22 +16,40 @@ class ShoppingViewModel(private val itemDao: ItemDao) : ViewModel() {
         }
     }
 
-    fun updateItem(id: Int, itemName: String, itemQuantity: Int, itemPrice: Double) {
-        val item =
-            Item(id = id, itemName = itemName, itemQuantity = itemQuantity, itemPrice = itemPrice)
-        viewModelScope.launch(Dispatchers.IO) {
+    fun updateItem(item: Item) {
+        viewModelScope.launch {
             itemDao.update(item)
         }
     }
 
     fun deleteItem(item: Item) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             itemDao.delete(item)
         }
     }
+
+    fun isAvailableQuantity(item: Item): Boolean {
+        return (item.itemQuantity > 0)
+    }
+
+    fun sellItem(item: Item) {
+        if (item.itemQuantity > 0) {
+            val newItem = item.copy(itemQuantity = item.itemQuantity - 1)
+            updateItem(newItem)
+        }
+    }
+
+    fun retrieveItem(id: Int): LiveData<Item> {
+        return itemDao.getItem(id).asLiveData()
+    }
+
+    fun isEntryValid(itemName: String, itemQuantity: String, itemPrice: String): Boolean {
+        return !(itemName.isNullOrBlank() || itemPrice.isNullOrBlank() || itemPrice.isNullOrBlank())
+    }
 }
+
 class ShoppingViewModelFactory(private val itemDao: ItemDao) : ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ShoppingViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
             return ShoppingViewModel(itemDao) as T
