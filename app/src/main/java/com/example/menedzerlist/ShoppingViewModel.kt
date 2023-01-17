@@ -9,8 +9,8 @@ import kotlinx.coroutines.launch
 class ShoppingViewModel(private val itemDao: ItemDao) : ViewModel() {
     val allItems: LiveData<List<Item>> = itemDao.getItems().asLiveData()
 
-    fun addItem(itemName: String, itemQuantity: Int, itemPrice: Double) {
-        val item = Item(itemName = itemName, itemQuantity = itemQuantity, itemPrice = itemPrice)
+    fun addItem(itemName: String, itemQuantity: String, itemPrice: String) {
+        val item = Item(itemName = itemName, itemQuantity = itemQuantity.toInt(), itemPrice = itemPrice.toDouble())
         viewModelScope.launch(Dispatchers.IO) {
             itemDao.insert(item)
         }
