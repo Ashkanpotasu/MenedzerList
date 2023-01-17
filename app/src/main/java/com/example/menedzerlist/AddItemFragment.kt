@@ -31,7 +31,7 @@ class AddItemFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
+        _binding = FragmentAddItemBinding.inflate(inflater, container, false)
         return binding.root
     }
 
