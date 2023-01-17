@@ -31,8 +31,11 @@
     <fragment
         android:id="@+id/addItemFragment"
         android:name="com.example.menedzerlist.AddItemFragment"
-        android:label="AddItemFragment"
+        android:label="{title}"
         tools:layout="@layout/fragment_add_item">
+        <argument
+            android:name="title"
+            app:argType="string" />
         <argument
             android:name="id"
             android:defaultValue="-1"
