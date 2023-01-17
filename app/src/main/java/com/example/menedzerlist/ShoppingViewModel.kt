@@ -44,7 +44,7 @@ class ShoppingViewModel(private val itemDao: ItemDao) : ViewModel() {
     }
 
     fun isEntryValid(itemName: String, itemQuantity: String, itemPrice: String): Boolean {
-        return !(itemName.isNullOrBlank() || itemPrice.isNullOrBlank() || itemPrice.isNullOrBlank())
+        return !(itemName.isNullOrBlank() || itemQuantity.isNullOrBlank() || itemPrice.isNullOrBlank())
     }
 }
 
