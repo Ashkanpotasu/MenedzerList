@@ -13,10 +13,10 @@
         style="@style/Widget.Inventory.TextView"
         android:layout_width="wrap_content"
         android:text="@string/nazwa"
+        android:textColor="@color/blue"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/blue"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/item_name"
@@ -32,11 +32,11 @@
         style="@style/Widget.Inventory.TextView"
         android:layout_width="wrap_content"
         android:text="@string/cena_"
+        android:textColor="@color/blue"
         app:layout_constraintBaseline_toBaselineOf="@+id/item_price"
         app:layout_constraintEnd_toStartOf="@+id/item_price"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/blue"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/item_price"
@@ -54,11 +54,11 @@
         style="@style/Widget.Inventory.TextView"
         android:layout_width="wrap_content"
         android:text="@string/ilosc"
+        android:textColor="@color/blue"
         app:layout_constraintBaseline_toBaselineOf="@+id/item_count"
         app:layout_constraintEnd_toStartOf="@+id/item_count"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/blue"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/item_count"
@@ -103,7 +103,7 @@
         android:src="@drawable/ic_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@android:color/white" />
+        app:tint="@color/yellow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
