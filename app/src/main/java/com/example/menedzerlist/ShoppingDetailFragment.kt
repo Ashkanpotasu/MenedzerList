@@ -54,8 +54,8 @@ class ShoppingDetailFragment : Fragment() {
     private fun bind(item: Item) {
         binding.apply {
             binding.itemName.text = item.itemName
-            binding.itemCount.text = item.itemQuantity.toString()
             binding.itemPrice.text = item.getFormattedPrice()
+            binding.itemCount.text = item.itemQuantity.toString()
 
             //wroc.isEnabled = viewModel.isAvailableQuantity(item)
             wroc.setOnClickListener { findNavController().navigateUp() }
@@ -67,7 +67,7 @@ class ShoppingDetailFragment : Fragment() {
     }
 
     private fun editItem() {
-        val action = ShoppingListFragmentDirections.actionShoppingListFragmentToAddItemFragment( //TODO to nie działa
+        val action = ShoppingDetailFragmentDirections.actionItemDetailFragmentToAddItemFragment(
             "Edytuj",
             item.id
         )
