@@ -1,3 +1,3 @@
 # Menedżer list
 
-Program do tworzenia list
+Program do tworzenia listy zakupowej
