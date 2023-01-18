@@ -57,7 +57,6 @@ class ShoppingDetailFragment : Fragment() {
             binding.itemPrice.text = item.getFormattedPrice()
             binding.itemCount.text = item.itemQuantity.toString()
 
-            //wroc.isEnabled = viewModel.isAvailableQuantity(item)
             wroc.setOnClickListener { findNavController().navigateUp() }
 
             deleteItem.setOnClickListener { showConfirmationDialog() }
