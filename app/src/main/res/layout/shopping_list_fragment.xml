@@ -69,6 +69,6 @@
         android:src="@drawable/ic_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@android:color/white" />
+        app:tint="@color/yellow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
