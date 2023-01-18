@@ -14,11 +14,12 @@ data class Item(
     @ColumnInfo(name = "name")
     var itemName: String,
 
-    @ColumnInfo(name = "quantity")
-    var itemQuantity: Int,
-
     @ColumnInfo(name = "price")
-    val itemPrice: Double
+    val itemPrice: Double,
+
+    @ColumnInfo(name = "quantity")
+    var itemQuantity: Int
+
 )
 
 fun Item.getFormattedPrice(): String = NumberFormat.getCurrencyInstance(Locale("pl", "PL")).format(itemPrice)
