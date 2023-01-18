@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MenedzerList</string>
+    <string name="app_name">Lista zakupów</string>
     <string name="nazwa_produktu">Nazwa produktu</string>
     <string name="cena">Cena</string>
     <string name="ilosc">Ilość:</string>
