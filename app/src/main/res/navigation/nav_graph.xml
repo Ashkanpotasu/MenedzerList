@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/shoppingDetailFragment"
         android:name="com.example.menedzerlist.ShoppingDetailFragment"
-        android:label="fragment_item_detail"
+        android:label="Szczegóły"
         tools:layout="@layout/fragment_item_detail">
         <argument
             android:name="item_id"
