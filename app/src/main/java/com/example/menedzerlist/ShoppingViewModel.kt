@@ -3,22 +3,32 @@ package com.example.menedzerlist
 import androidx.lifecycle.*
 import com.example.menedzerlist.data.Item
 import com.example.menedzerlist.data.ItemDao
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ShoppingViewModel(private val itemDao: ItemDao) : ViewModel() {
     val allItems: LiveData<List<Item>> = itemDao.getItems().asLiveData()
 
-    fun addItem(itemName: String, itemQuantity: String, itemPrice: String) {
-        val item = Item(itemName = itemName, itemQuantity = itemQuantity.toInt(), itemPrice = itemPrice.toDouble())
-        viewModelScope.launch(Dispatchers.IO) {
+    fun addItem(itemName: String, itemPrice: String, itemQuantity: String) {
+        val item = Item(
+            itemName = itemName,
+            itemPrice = itemPrice.toDouble(),
+            itemQuantity = itemQuantity.toInt()
+        )
+        viewModelScope.launch {
             itemDao.insert(item)
         }
     }
 
-    fun updateItem(item: Item) {
+    fun updateItem(id: Int, itemName: String, itemPrice: String, itemQuantity: String) {
+        val updatedItem = Item(
+            id = id,
+            itemName = itemName,
+            itemPrice = itemPrice.toDouble(),
+            itemQuantity = itemQuantity.toInt()
+        )
+
         viewModelScope.launch {
-            itemDao.update(item)
+            itemDao.update(updatedItem)
         }
     }
 
@@ -28,23 +38,12 @@ class ShoppingViewModel(private val itemDao: ItemDao) : ViewModel() {
         }
     }
 
-    fun isAvailableQuantity(item: Item): Boolean {
-        return (item.itemQuantity > 0)
-    }
-
-    fun sellItem(item: Item) {
-        if (item.itemQuantity > 0) {
-            val newItem = item.copy(itemQuantity = item.itemQuantity - 1)
-            updateItem(newItem)
-        }
-    }
-
     fun retrieveItem(id: Int): LiveData<Item> {
         return itemDao.getItem(id).asLiveData()
     }
 
-    fun isEntryValid(itemName: String, itemQuantity: String, itemPrice: String): Boolean {
-        return !(itemName.isNullOrBlank() || itemQuantity.isNullOrBlank() || itemPrice.isNullOrBlank())
+    fun isEntryValid(itemName: String, itemPrice: String, itemQuantity: String): Boolean {
+        return !(itemName.isNullOrBlank() || itemPrice.isNullOrBlank() || itemQuantity.isNullOrBlank())
     }
 }
 
