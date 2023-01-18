@@ -29,9 +29,9 @@ class ShoppingListAdapter(private val onItemClicked: (Item) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Item) {
             binding.apply {
-                itemName.text = item.itemName
-                itemPrice.text = item.getFormattedPrice()
-                itemQuantity.text = item.itemQuantity.toString()
+                binding.itemName.text = item.itemName
+                binding.itemPrice.text = item.getFormattedPrice()
+                binding.itemQuantity.text = item.itemQuantity.toString()
             }
         }
     }
