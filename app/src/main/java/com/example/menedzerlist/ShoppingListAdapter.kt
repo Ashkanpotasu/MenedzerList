@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.menedzerlist.data.Item
 import com.example.menedzerlist.data.getFormattedPrice
+import com.example.menedzerlist.databinding.FragmentListItemBinding
 import com.example.menedzerlist.databinding.ShoppingListFragmentBinding
 
 class ShoppingListAdapter(private val onItemClicked: (Item) -> Unit) :
@@ -21,11 +22,11 @@ class ShoppingListAdapter(private val onItemClicked: (Item) -> Unit) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        return ItemViewHolder(ShoppingListFragmentBinding.inflate(LayoutInflater.from(parent.context)))
+        return ItemViewHolder(FragmentListItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
 
-    class ItemViewHolder(private var binding: ShoppingListFragmentBinding) :
+    class ItemViewHolder(private var binding: FragmentListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Item) {
             binding.apply {
