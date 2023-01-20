@@ -53,7 +53,7 @@
         android:id="@+id/item_count_label"
         style="@style/Widget.Inventory.TextView"
         android:layout_width="wrap_content"
-        android:text="@string/ilosc"
+        android:text="@string/ilosc_"
         android:textColor="@color/blue"
         app:layout_constraintBaseline_toBaselineOf="@+id/item_count"
         app:layout_constraintEnd_toStartOf="@+id/item_count"
