@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/item_name"
         style="@style/Widget.Inventory.Header"
-        android:layout_width="170dp"
+        android:layout_width="165dp"
         android:layout_marginStart="8dp"
         android:text="@string/produkt"
         app:layout_constraintEnd_toStartOf="@+id/item_price"
@@ -22,7 +22,6 @@
         android:id="@+id/item_price"
         style="@style/Widget.Inventory.Header"
         android:layout_below="@+id/item_name"
-        android:layout_marginStart="2dp"
         android:text="@string/cena"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/item_quantity"
